@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body
+    style="
+      background-image: url('./image/heavy-lift-drone-1024x683.jpg');
+      background-repeat: no-repeat;
+      height: 100%;
+      background-size: cover;
+    "
+  >
+    <div class="color">
+      <!-- Main Header Section (Now inside the background image) -->
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+        <a href="./Menu/about.html">About</a>
+        <a href="./Menu/services.html">Services</a>
+        <a href="./Menu/clients.html">Clients</a>
+        <a href="./Menu/contact.html">Contact</a>
+        <a href="./Menu/register.html"> Register</a>
+        <a href="./Menu/login.html">Login</a>
+      </div>
+      <span onclick="openNav()">
+        <div class="container" onclick="myFunction(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </span>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
