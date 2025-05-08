@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Cascade/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+
+  <body>
+    <div class="color">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+        <a href="../Menu/about.html">About</a>
+        <a href="../Menu/register.html">Register</a>
+        <a href="../Menu/login.html">Login</a>
+      </div>
+
+      <span onclick="openNav()">
+        <div class="container" onclick="myFunction(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </span>
+    </div>
+
+    <br />
+
+    <!-- Image Gallery Section -->
+    <div class="image-gallery">
+      <div class="profile" onclick="showDetails('Drone Cam')">
+        <img src="../image/Drone-image.jpg" alt="Drone Cam" />
+        <h3>Drone Cam</h3>
+      </div>
+      <div class="profile" onclick="showDetails('Drone Delivery')">
+        <img
+          src="../image/heavy-lift-drone-1024x683.jpg"
+          alt="Drone Delivery"
+        />
+        <h3>Drone Delivery</h3>
+      </div>
+      <div class="profile" onclick="showDetails('Drone Fly')">
+        <img src="../image/i.jpg" alt="Drone Fly" />
+        <h3>Drone Fly</h3>
+      </div>
+    </div>
+
+    <br />
+
+    <!-- Drone Information Section -->
+    <div class="drone-info" id="droneDetails">
+      <!-- Dynamic content will be inserted here -->
+    </div>
+
+    <script src="./Scripting/Scr.js"></script>
+  </body>
+</html>
