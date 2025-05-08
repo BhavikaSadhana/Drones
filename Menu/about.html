@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./Cascade/style2.css" />
+  </head>
+  <body>
+    <div class="color">
+      <!-- Main Header Section (Now inside the background image) -->
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+        <a href="../Menu/services.html">Services</a>
+        <a href="../Menu/contact.html">Contact</a>
+        <a href="../Menu/login.html">Login</a>
+        <a href="../Menu/register.html">Register</a>
+      </div>
+      <span onclick="openNav()">
+        <div class="containers" onclick="myFunction(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </span>
+    </div>
+    <div class="container">
+      <h1>
+        This is a e-commerce website we supply drones to the users it has become
+        a trusted destination for over 12 million plus registered users
+        worldwide.
+      </h1>
+      <img
+        src="../image/i.jpg"
+        width="50%"
+        height="50%"
+        style="margin-left: 90px"
+      />
+    </div>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.body.style.backgroundColor = "white";
+      }
+
+      function myFunction(x) {
+        x.classList.toggle("change");
+      }
+    </script>
+  </body>
+</html>

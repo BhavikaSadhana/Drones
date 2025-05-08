@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      input[type="text"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+
+      input[type="submit"] {
+        background-color: rgb(82, 5, 69);
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: rgb(82, 5, 69);
+      }
+
+      .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+      }
+      input,
+      button {
+        width: 300px;
+        height: 40px;
+      }
+
+      button {
+        background-color: purple;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Contact Form</h3>
+
+    <div class="container">
+      <form id="registerForm">
+        <label for="fname">First Name</label>
+        <input
+          type="text"
+          id="fname"
+          name="firstname"
+          placeholder="Your name.."
+        />
+
+        <label for="lname">Last Name</label>
+        <input
+          type="text"
+          id="lname"
+          name="lastname"
+          placeholder="Your last name.."
+        />
+
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea
+          id="subject"
+          name="subject"
+          placeholder="Write something.."
+          style="height: 200px"
+        ></textarea>
+
+        <button type="submit" value="Submit">Submit</button>
+      </form>
+    </div>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.body.style.backgroundColor = "white";
+      }
+
+      function myFunction(x) {
+        x.classList.toggle("change");
+      }
+      const storedUser = localStorage.getItem("user");
+
+      // Only show alert once per session if already registered
+      if (storedUser && !sessionStorage.getItem("registerAlertShown")) {
+        alert("User already registered. Redirecting to login...");
+        sessionStorage.setItem("registerAlertShown", "true");
+        window.location.href = "login.html";
+      }
+
+      // Registration form logic
+      document
+        .getElementById("registerForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const fname = document.getElementById("fname").value;
+          const lname = document.getElementById("lname").value;
+          const country = document.getElementById("country").value;
+          const subject = document.getElementById("subject").value;
+
+          if (!fname || fname.length < 6) {
+            alert(
+              "Firstname is required and firstname must be at least 6 characters."
+            );
+            return;
+          }
+
+          localStorage.setItem(
+            "user",
+            JSON.stringify({ fname, lname, country, subject })
+          );
+          alert("sent message successful!");
+        });
+    </script>
+  </body>
+</html>

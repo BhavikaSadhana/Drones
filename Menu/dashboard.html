@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./Cascade/style1.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        height: 100vh;
+      }
+
+      /* Sidebar */
+      .sidebar {
+        width: 250px;
+        background-color: purple;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 20px;
+      }
+
+      .sidebar h2 {
+        margin: 0;
+        margin-bottom: 30px;
+        font-size: 24px;
+      }
+
+      .sidebar a {
+        color: white;
+        text-decoration: none;
+        margin-bottom: 15px;
+        display: block;
+        font-size: 18px;
+      }
+
+      .sidebar a:hover {
+        text-decoration: underline;
+      }
+
+      .logout-btn {
+        background-color: white;
+        color: purple;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .logout-btn:hover {
+        background-color: #e0e0e0;
+      }
+
+      /* Main Content */
+      .main-content {
+        flex: 1;
+        padding: 50px;
+        background-color: #f5f5f5;
+      }
+
+      .main-content h1 {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      .main-content p {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div>
+        <h2>Dashboard</h2>
+        <a href="../Menu/contact.html">Contact</a>
+        <a href="../Menu/clients.html">Clients</a>
+        <a href="../Menu/services.html">Services</a>
+      </div>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="main-content">
+      <h1>Welcome to Your Dashboard</h1>
+      <p id="welcomeMsg"></p>
+      <img src="../image/Drone-image.jpg" height="86%" width="95%" />
+    </div>
+
+    <script>
+      const user = JSON.parse(localStorage.getItem("user"));
+
+      if (!user) {
+        alert("You are not logged in. Redirecting to login page.");
+        window.location.href = "login.html";
+      } else {
+        document.getElementById(
+          "welcomeMsg"
+        ).textContent = `Hello, ${user.username}!`;
+      }
+
+      function logout() {
+        localStorage.removeItem("user");
+        window.location.href = "login.html";
+      }
+    </script>
+  </body>
+</html>

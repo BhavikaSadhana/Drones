@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./Cascade/style.css" />
+  </head>
+  <body>
+    <div class="color">
+      <!-- Main Header Section (Now inside the background image) -->
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+          >&times;</a
+        >
+        <a href="../Menu/dashboard.html">Dashboard</a>
+
+        <a href="../Menu/services.html">Services</a>
+      </div>
+      <span onclick="openNav()">
+        <div class="containers" onclick="myFunction(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </span>
+    </div>
+    <div class="container">
+      <form id="loginForm">
+        <br />
+        <h1 style="color: purple; margin-left: 20%">Login Page</h1>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          placeholder="username"
+        />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+          placeholder="password"
+        />
+        <br />
+        <button type="submit1">login</button><br /><br />
+        <a href="../Menu/register.html">Don't have account?</a>
+      </form>
+    </div>
+    <script src="./Scripting/scripts.js"></script>
+  </body>
+</html>
